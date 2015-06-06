@@ -1,2 +1,2 @@
 # security-person
-sp
+Sistema desarollado por ISC: Francisco Eduardo Ascencio Dominguez
