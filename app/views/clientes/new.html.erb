@@ -1,0 +1,16 @@
+<%= render '/renders/checkstatus'%>
+<%= render 'renders/check_level' %>
+
+<div class="panel panel-default">
+  <div class="panel-heading">Rellena los campos</div>
+  <div class="panel-body">
+	<% if user_signed_in? %>
+	<%= render '/renders/formClientes' %>	
+	<%= link_to 'Ver', @cliente , class:'col-md-offset-11' %> |
+	<%= link_to 'Atraz', clientes_path %>
+	<% else %>
+	<%= render '/renders/errorsession'%>
+	<% end %> 
+
+  </div>
+</div>

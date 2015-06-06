@@ -1,0 +1,16 @@
+<%= render '/renders/checkstatus'%>
+<%= render 'renders/check_level' %>
+<% if user_signed_in? %>
+ <div class="panel panel-default">
+  <div class="panel-heading">Datos para editar el cliente: <%= @cliente.name %> <%= @cliente.apellidos %></div>
+  <div class="panel-body">
+   
+<%= render '/renders/formClientes' %>	
+
+<%= link_to 'Ver', @cliente , class:'col-md-offset-11' %> |
+<%= link_to 'Atraz', clientes_path %>
+	</div>
+</div>
+<% else %>
+		<%= render '/renders/errorsession'%>
+<% end %> 

@@ -1,0 +1,45 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id_cliente: MyString
+  : 1
+  tipo: 
+  : MyString
+  descripcion_peticion: MyString
+  : MyText
+  coordenada_peticion: MyString
+  : MyString
+  date_peticion: MyString
+  : 2015-02-17 13:30:44
+  status_peticion: MyString
+  : false
+  id_usuario: MyString
+  : 1
+  date_respuesta: MyString
+  : 2015-02-17 13:30:44
+  descripcion_respuesta: MyString
+  : MyText
+  status_respuesta: MyString
+  : false
+
+two:
+  id_cliente: MyString
+  : 1
+  tipo: 
+  : MyString
+  descripcion_peticion: MyString
+  : MyText
+  coordenada_peticion: MyString
+  : MyString
+  date_peticion: MyString
+  : 2015-02-17 13:30:44
+  status_peticion: MyString
+  : false
+  id_usuario: MyString
+  : 1
+  date_respuesta: MyString
+  : 2015-02-17 13:30:44
+  descripcion_respuesta: MyString
+  : MyText
+  status_respuesta: MyString
+  : false

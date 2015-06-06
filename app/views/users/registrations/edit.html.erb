@@ -1,0 +1,91 @@
+<div class="panel panel-default">
+  <div class="panel-heading">Edicion de <%= resource_name.to_s.humanize %>: <%= current_user.name %></div>
+  <div class="panel-body">
+
+<table border="0" width="100%">
+  <tr>
+      <td>
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <%= devise_error_messages! %>
+
+    <table class="table" width="100%">
+      <tr>
+        <td>
+        <div class="input-group input-group-lg centered">
+        <%= f.label :email , class: 'label label-success' %><br>
+        <%= f.email_field :email, autofocus: true ,class:'form-control' %>
+        </div>  
+        </td>
+
+        <td>
+        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+        <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+        <% end %>
+        <div class="input-group input-group-lg centered">
+        <%= f.label :Contraseña , class: 'label label-success' %> <i></i><br />
+        <%= f.password_field :password, autocomplete: "off" ,class:'form-control' %>
+        </div>
+        (Deje en blanco si no desea cambiar su contraseña.) 
+        </td>
+
+        <td>
+        <div class="input-group input-group-lg centered">
+        <%= f.label :Confirmar_contraseña , class: 'label label-success' %><br />
+        <%= f.password_field :password_confirmation, autocomplete: "off" ,class:'form-control' %>
+        </div>  
+        (Deje en blanco si no desea cambiar su contraseña.) 
+        </td>
+      </tr>
+
+      <tr>
+        
+        <td>
+        <div class="input-group input-group-lg centered">
+        <%= f.label :Nombre  , class: 'label label-success' %><br />
+        <%= f.text_field :name, autofocus: true  ,class:'form-control'%>
+        </div>     
+        </td>  
+      
+        <td>
+        <div class="input-group input-group-lg centered">
+        <%= f.label :Apellidos  , class: 'label label-success' %><br />
+        <%= f.text_field :apellidos, autofocus: true  ,class:'form-control'%>
+        </div>  
+        </td>
+
+        <td>
+        <div class="input-group input-group-lg centered">
+        <%= f.label :Direccion  , class: 'label label-success' %><br />
+        <%= f.text_field :direccion, autofocus: true  ,class:'form-control'%>
+        </div>    
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+        <div class="input-group input-group-lg centered">
+        <%= f.label :Telefono  , class: 'label label-success' %><br />
+        <%= f.text_field :telefono, autofocus: true  ,class:'form-control'%>
+        </div>   
+        </td>
+
+        <td>
+        <div class="input-group input-group-lg centered">
+        <%= f.label :Contraseña_actual, class: 'label label-danger' %><br />
+        <%= f.password_field :current_password, autocomplete: "off" , class:'form-control' %>
+        </div>
+        <strong>(Ingrese su contraseña actual para confirmar los cambios)</strong>
+        </td>
+        <td></td>
+      </tr>
+    </table>
+    <center>
+      <div class="actions">
+      <%= f.submit "Actualizar" , class:'btn btn-success btn-lg'%>
+      </div> 
+    </center>
+<% end %>
+     <br>
+     <hr>
+     <h3>Cancelar mi cuenta</h3>
+     <p>Si esta seguro de cancelar su cuenta de click en el boton. <%= button_to "Cancelar mi cuenta", registration_path(resource_name), data: { confirm: "Esta seguro de cancelar esta cuenta?, si cancela su cuenta ya no tendra acceso al sistema y toda su informacion y registros seran eliminados." }, method: :delete , class: 'btn btn-danger btn-lg' , disabled: :false %></p>

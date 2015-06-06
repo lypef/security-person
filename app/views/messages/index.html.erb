@@ -1,0 +1,49 @@
+<%= render '/renders/checkstatus'%>
+<p id="notice"><%= notice %></p>
+
+<table width="100%" class="styletable">
+
+      <% contador = 1 %>
+      <% @messages.each do |message| %>
+      <% if contador == 1 || contador == 2 %>
+        <td>
+          <div class="list-group">
+           <a href="/messages/<%= message.id %>" class="list-group-item">
+           <h4 class="list-group-item-heading"><%= message.asunto.upcase %></h4>
+           <p class="list-group-item-text"><%= message.mensaje.slice(0,80) %> ...</p>
+           </a>    
+           </div>  
+        </td>
+      <% contador += 1 %>
+
+      <% elsif contador == 3 %>
+      <tr>
+          <td>
+          <div class="list-group">
+           <a href="/messages/<%= message.id %>" class="list-group-item">
+           <h4 class="list-group-item-heading"><%= message.asunto.upcase %></h4>
+           <p class="list-group-item-text"><%= message.mensaje.slice(0,80) %> ...</p>
+           </a>    
+           </div>  
+        </td>
+      
+      <% contador += 1%>  
+      <%elsif contador == 4%>
+              <td>
+              <div class="list-group">
+              <a href="/messages/<%= message.id %>" class="list-group-item">
+              <h4 class="list-group-item-heading"><%= message.asunto.upcase %></h4>
+              <p class="list-group-item-text"><%= message.mensaje.slice(0,80) %> ...</p>
+              </a>    
+              </div>  
+              </td>
+              </tr>
+      
+            <% if contador == 4 %>
+            <% contador = 1 %>
+            <%end%>
+      <% end %>
+      <% end %>
+
+</table>
+<br>

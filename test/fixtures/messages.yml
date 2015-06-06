@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id_emisor: 
+  id_receptor: 
+  mensaje: 
+  date: 
+  status: false
+
+two:
+  id_emisor: 
+  id_receptor: 
+  mensaje: 
+  date: 
+  status: false

@@ -1,0 +1,7 @@
+<% if current_user.status == false || current_user.status == nil%>
+  <%= render 'viewpeticionesoffline' %>
+<% end %>
+<% if current_user.status == true %>
+  <%= render 'viewpeticionesonline' %>
+<% end %>
+<!--Codigo online sin peticiones que atender-->

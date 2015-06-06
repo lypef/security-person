@@ -1,0 +1,69 @@
+
+    <script>
+    jQuery(function(){
+    jQuery('#Boton').click();
+    });
+    </script>
+
+<button class= "btn btn-success hide" id="Boton" data-toggle="modal" data-target="#ventana">Abrir</button>
+
+<div class="modal fade in" id="ventana" tabindex="-1" role="dialog" aria-labelledby="mymodellabel" arial-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        
+        <div class="alert alert-info" role="alert">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <span class="glyphicon glyphicon-flag"></span> <%= p.peticiones %>
+        </div>
+      </div>
+      <div class="modal-body">
+
+    <!--Code update peticion-->
+    
+    <%= form_for  :post,  :url => {:action => :updatepeticion} do |f| %>
+    <%= f.text_field :id, :value => p.id %>
+    <%= f.submit :OK , class: 'btn btn-success' %>
+    <%= debug @peticion %>
+    <% end %>
+    <!--Termina update peticion-->      
+
+      <div class="panel panel-default">
+         <div class="panel-heading">
+           Ubicacion
+         </div>
+         <div class="panel-body">
+           Render mapa by. google maps
+         </div> 
+      </div>
+
+      <div class="panel panel-warning">
+      <div class="panel-heading">Descripcion de peticion # <%= p.id %></div>
+      <div class="panel-body">
+      <%= p.descripcion_peticion %>
+      </div>
+      </div>
+
+      <div class="panel panel-success">
+      <div class="panel-heading">Cliente # <%= p.id_cliente %></div>
+      <div class="panel-body">
+        Numero de cliente: <%= p.id_cliente %>
+        <br>
+        Fecha: <%= p.date_peticion %>
+      </div> 
+      </div>
+        
+      </div>
+      <div class="modal-footer">
+      
+      <div class="input-group">
+      <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-bullhorn"></span></span>
+      <input type="text" class="form-control" placeholder="Escriba notificacion para el cliente." aria-describedby="basic-addon1">
+      </div>
+      <br>
+        <button class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+        <button class="btn btn-success" data-dismiss="modal">Apoyo enviado</button>
+      </div>
+    </div>
+  </div>
+</div>

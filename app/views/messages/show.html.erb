@@ -1,0 +1,32 @@
+<%= render '/renders/checkstatus'%>
+
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title"><%= @message.asunto.upcase %></h3>
+  </div>
+  <div class="panel-body", style="text-align: justify;">
+    <%= @message.mensaje.capitalize %>
+    <br>
+    <hr>
+    <div style="text-align: right">
+    Creado por: <%= @message.user.email %> (<%= @message.user.name %><%= @message.user.apellidos %>) <br>
+    Fecha de creacion:<%= @message.created_at %> <br>
+    Ultima modificacion: <%= @message.updated_at %> <br>
+    Estatus: 
+    <% if @message.status == nil %>
+    Vigente
+    <% else %>
+    Caducado
+    <% end %>
+    </div>
+
+    <% if current_user.level == "admin" %>
+    <hr>
+    <div style="text-align: right">
+        <%= link_to '', edit_message_path(@message), class: 'btn btn-warning glyphicon glyphicon-pencil' %>
+        <%= link_to '' , @message ,method: :delete, data: {confirm: 'Esta seguro de eliminar esta notificacion.'},  class: 'btn btn-danger glyphicon glyphicon-trash' %>
+    </div>
+    <%end%>
+  </div>
+</div>

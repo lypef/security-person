@@ -1,0 +1,104 @@
+<%= render '/renders/checkstatus'%>
+<%= render '/renders/maps'%>
+    <div class="input-group input-group-lg">
+    <span class="input-group-addon" id="sizing-addon1">Cliente</span>
+    <input type="text" class="form-control" placeholder="<%= @peticione.cliente.name %> <%= @peticione.cliente.apellidos %>" aria-describedby="sizing-addon1">
+    </div>
+    <br>
+    <div class="input-group input-group-lg">
+    <span class="input-group-addon" id="sizing-addon1">Tipo</span>
+    <input type="text" class="form-control" placeholder="<%= @peticione.peticiones %>" aria-describedby="sizing-addon1">
+    </div>
+<br>
+        <div class="input-group input-group-lg">
+    <span class="input-group-addon" id="sizing-addon1">Descripcion</span>
+    <input type="text" class="form-control" placeholder="<%= @peticione.descripcion_peticion %>" aria-describedby="sizing-addon1">
+    </div>
+<br>
+    <!--Ubicacion google maps-->
+    <div class="panel panel-default">
+  <div class="panel-heading">Ubicacion de peticion gracias a google maps.</div>
+  <div class="panel-body">
+            <div style='width: 100%'>
+        <div id="googlemaps" style='width: 100%; height: 450px;'>
+        </div>
+        </div>
+        
+        <script >
+        handler = Gmaps.build('Google');
+        handler.buildMap({ provider: {}, internal: {id: 'googlemaps'}}, function(){
+        markers = handler.addMarkers([
+        {
+        "lat": <%= @peticione.latitud %>,
+        "lng": <%= @peticione.longitud%>,
+        "picture": {
+        "url": "https://www.google.com.py/mapmaker/mapfiles/marker-k.png",
+        "width":  36,
+        "height": 36
+        },
+        "infowindow": "<%= @peticione.descripcion_peticion %>"
+        }
+        ]);
+        handler.bounds.extendWith(markers);
+        handler.fitMapToBounds();
+        handler.getMap().setZoom(17);
+        });
+        </script>
+  </div>
+</div>
+
+           <!--Termina ubicacion google maps-->
+<br>
+        <div class="input-group input-group-lg">
+    <span class="input-group-addon" id="sizing-addon1">Fecha y hora de peticion</span>
+    <input type="text" class="form-control" placeholder="<%= @peticione.date_peticion %>" aria-describedby="sizing-addon1">
+    </div>
+<br>
+        <div class="input-group input-group-lg">
+    <span class="input-group-addon" id="sizing-addon1">Status peticion</span>
+    <input type="text" class="form-control" placeholder="
+    <%if  @peticione.status_peticion == true %>
+    Atendido
+    <%else%>
+    En proceso
+    <%end%>
+    " aria-describedby="sizing-addon1">
+    </div>    
+    <% if @peticione.user_id != nil %>
+    <br>
+
+        <div class="input-group input-group-lg">
+    <span class="input-group-addon" id="sizing-addon1">Usuario que atiende</span>
+    <input type="text" class="form-control" placeholder="# <%= @peticione.user_id %> - <%= @peticione.user.name %> <%= @peticione.user.apellidos %> " aria-describedby="sizing-addon1">
+    </div>  
+    
+<br>
+        <div class="input-group input-group-lg">
+    <span class="input-group-addon" id="sizing-addon1">Fecha y hora de respuesta</span>
+    <input type="text" class="form-control" placeholder="<%= @peticione.date_respuesta %>" aria-describedby="sizing-addon1">
+    </div>    
+<br>
+        <div class="input-group input-group-lg">
+    <span class="input-group-addon" id="sizing-addon1">Respuesta</span>
+    <input type="text" class="form-control" placeholder="<%= @peticione.descripcion_respuesta %>" aria-describedby="sizing-addon1">
+    </div>    
+<br>
+        <div class="input-group input-group-lg">
+    <span class="input-group-addon" id="sizing-addon1">Estatus respuesta</span>
+    <input type="text" class="form-control" placeholder="
+    <%if @peticione.status_respuesta == true%>
+    Atendido
+    <%elsif @peticione.status_respuesta == false %>
+    Cancelado    
+    <% else %>
+    En proceso
+    <%end%>
+    " aria-describedby="sizing-addon1">
+    </div> 
+    <%end%>     
+    <br>
+    <center>
+    <%= link_to "OK", peticiones_path , class: 'btn btn-lg btn-success' %>
+    <%= link_to "IMPRIMIR", peticiones_path , class: 'btn btn-lg btn-danger' %>
+    </center>
+    <br>

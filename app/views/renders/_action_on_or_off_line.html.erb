@@ -1,0 +1,6 @@
+<%= render '/renders/checkstatus'%>
+<% if current_user.status == true %>
+	En linea
+<%else%>
+	Offline
+<% end %>

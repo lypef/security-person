@@ -1,0 +1,59 @@
+<%= render '/renders/checkstatus'%>
+<%= render 'renders/check_level' %>
+<% if user_signed_in? %>
+<div class="panel panel-default">
+  <div class="panel-heading">Datos del cliente: <%= @cliente.name %> <%= @cliente.apellidos %></div>
+  <div class="panel-body">
+
+    <div class="input-group input-group-lg">
+    <span class="input-group-addon" id="sizing-addon1">ID</span>
+    <input type="text" class="form-control" placeholder="<%= @cliente.id %>" aria-describedby="sizing-addon1">
+    </div>
+    <br>
+    <div class="input-group input-group-lg">
+    <input type="text" class="form-control" placeholder="<%= @cliente.id_movil %>" aria-describedby="sizing-addon1">
+    <span class="input-group-addon" id="sizing-addon1">MOVIL</span>    
+    </div>
+    <br>
+    <div class="input-group input-group-lg">
+    <span class="input-group-addon" id="sizing-addon1">Nombre</span>
+    <input type="text" class="form-control" placeholder="<%= @cliente.name %>" aria-describedby="sizing-addon1">
+    </div>
+    <br>
+    <div class="input-group input-group-lg">
+    <input type="text" class="form-control" placeholder="<%= @cliente.apellidos %>" aria-describedby="sizing-addon1">
+    <span class="input-group-addon" id="sizing-addon1">Apellidos</span>
+    </div>
+    <br>
+    <div class="input-group input-group-lg">
+    <span class="input-group-addon" id="sizing-addon1">Direccion</span>
+    <input type="text" class="form-control" placeholder="<%= @cliente.direccion %>" aria-describedby="sizing-addon1">
+    </div>
+    <br>
+    <div class="input-group input-group-lg">
+    <input type="text" class="form-control" placeholder="<%= @cliente.email %>" aria-describedby="sizing-addon1">
+    <span class="input-group-addon" id="sizing-addon1">Email</span>    
+    </div>
+    <br>
+    <div class="input-group input-group-lg">
+    <span class="input-group-addon" id="sizing-addon1">Status</span>         
+    <input type="text" class="form-control" placeholder="
+    <% if @cliente.status == true %>
+    En linea
+    <% else %>
+    Desconectado
+    <% end %>  
+    " aria-describedby="sizing-addon1"> 
+    
+    </div>
+    <br>
+    <%= link_to 'Editar', edit_cliente_path(@cliente) , class:'col-md-offset-11'%> |
+    <%= link_to 'Atraz', clientes_path %>
+    <center>
+    <%= link_to 'Ok', clientes_path, class:'btn btn-lg btn-success' %>
+    </center>
+  </div>
+</div>
+<% else %>
+    <%= render '/renders/errorsession'  %>
+<% end %>

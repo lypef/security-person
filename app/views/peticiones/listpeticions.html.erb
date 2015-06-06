@@ -1,0 +1,34 @@
+<%= render '/renders/check_level' %>
+<div class= "panel panel-default">
+  <div class="panel-heading">Lista de peticiones</div>
+  <table class= "table table-striped table-condensed table-responsive">
+  <th>CLIENTE</th><th>TIPO DE PETICION</th><th>DESCRIPCION</th><th>FECHA</th><th>ESTADO</th><th></th>
+<% @peticione.each do |p| %>
+
+    <tr>
+  <td><%= p.cliente.name %> <%= p.cliente.apellidos %></td>
+  <td><%= p.peticiones %></td>
+  <td><%= p.descripcion_peticion %></td>
+  <td><%= p.date_peticion %></td>
+
+  
+  <% if p.status_peticion == true %>
+  <td><%= link_to '', '',class:'btn btn-success glyphicon glyphicon-ok' %></td>
+  <% end %>
+
+  <% if p.status_peticion == nil %>
+  <td><%= link_to '', '',class:'btn btn-warning glyphicon glyphicon-refresh' %></td>
+  <% end %>
+  
+  <% if p.status_peticion == false %>
+  <td><%= link_to '', '',class:'btn btn-danger glyphicon glyphicon-remove' %></td>
+  <% end %>
+  
+  <td><%= link_to 'Ver detalles', p %></td>
+  </tr>
+
+  
+
+<% end %>
+</table>
+</div>

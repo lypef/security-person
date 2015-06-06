@@ -1,0 +1,85 @@
+    <div class="panel panel-success">
+    <div class="panel-heading">Nuevo usuario</div>
+    <div class="panel-body">
+    <!--Codigo-->
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= devise_error_messages! %>
+    <table class="table">
+        <tr>
+            <td>
+            <div class="input-group input-group-lg centered">
+            <%= f.label :email  , class: 'label label-success' %><br />
+            <%= f.email_field :email, autofocus: true  ,class:'form-control'%>
+            </div>    
+            </td>
+            
+            <td>
+            <div class="input-group input-group-lg centered">
+            <%= f.label :password , class: 'label label-success' %>
+            <% if @validatable %>
+            
+            <% end %><br />
+            <%= f.password_field :password, autocomplete: "off" ,class:'form-control' %>
+            </div>    
+            </td>
+
+            <td>
+            <div class="input-group input-group-lg centered">
+            <%= f.label :password_confirmation , class: 'label label-success' %><br />
+            <%= f.password_field :password_confirmation, autocomplete: "off" ,class:'form-control' %>
+            </div>    
+            </td>
+
+            <td>
+            <div class="input-group input-group-lg centered">
+            <%= f.label :Nombre  , class: 'label label-success' %><br />
+            <%= f.text_field :name, autofocus: true  ,class:'form-control'%>
+            </div>    
+            </td>
+
+            
+        </tr>
+
+        <tr>
+<td>
+            <div class="input-group input-group-lg centered">
+            <%= f.label :Apellidos  , class: 'label label-success' %><br />
+            <%= f.text_field :apellidos, autofocus: true  ,class:'form-control'%>
+            </div>  
+            </td>
+
+            <td>
+            <div class="input-group input-group-lg centered">
+            <%= f.label :Direccion  , class: 'label label-success' %><br />
+            <%= f.text_field :direccion, autofocus: true  ,class:'form-control'%>
+            </div>    
+            </td>
+
+            <td>
+            <div class="input-group input-group-lg centered">
+            <%= f.label :Telefono  , class: 'label label-success' %><br />
+            <%= f.text_field :telefono, autofocus: true  ,class:'form-control'%>
+            </div>    
+            </td> 
+            <td></td>  
+        </tr>
+    </table>
+    <em><strong>Importante!</strong> Tu contraseña debe contener como minimo (<%= @minimum_password_length %> caracteres).</em>
+    <!--Checkbox-->
+    <div class="input-group input-group-lg centered">
+    <% f.check_box :status %>
+    </div>
+    <!--Finaliza checbox-->
+    
+    <center>
+    <div class="actions">
+    <%= f.submit "Registrar" , class: 'btn btn-success btn-lg' %>
+    </div>
+    </center>
+    <% end %>
+    <br>
+    <%= render "users/shared/links" %>
+    <!--Finaliza Codigo-->
+    </div>
+    </div>  
+    

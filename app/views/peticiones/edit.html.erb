@@ -1,0 +1,131 @@
+<%= render 'renders/maps' %>
+    <script>
+    jQuery(function(){
+    jQuery('#Boton').click();
+    });
+    </script>
+
+<button class= "btn btn-success hide" id="Boton" data-toggle="modal" data-target="#ventana"></button>
+
+<div class="modal in" id="ventana" tabindex="-1" role="dialog" aria-labelledby="mymodellabel" arial-hidden="true">
+
+  <div class="modal-dialog">
+    
+    <% if @peticiones.status_respuesta == true %>
+        <meta http-equiv="refresh" content="1;URL=/peticiones" />
+        <div class="alert alert-danger" role="alert"><strong>Error!</strong> Esta peticion ya ah sido atendida.</div>
+    <%elsif current_user.status == false %>
+     <meta http-equiv="refresh" content="1;URL=/peticiones" />
+        <div class="alert alert-danger" role="alert"><strong>Error!</strong> Usted esta en modo offline.</div>
+    <%else%>
+        
+
+    <!--Code update peticion-->
+      <% update = PeticionesController.new 
+      update.UpdatePeticionID(@peticiones.id,true,current_user.id) %>
+    <!--Termina update peticion-->     
+    
+    
+    <div class="modal-content">
+      <div class="modal-header">
+        
+        <div class="alert alert-info" role="alert">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <span class="glyphicon glyphicon-flag"></span> <%= @peticiones.peticiones %>
+        </div>
+      </div>
+
+      <div class="modal-body">
+     <div class="panel panel-default">
+         <div class="panel-heading">
+           Ubicacion
+         </div>
+         <div class="panel-body">
+
+        <%= form_for(@peticione) do |f| %>
+        
+        <%=  f.hidden_field :date_respuesta , value: Time.current.to_s %>
+        <%=  f.hidden_field :status_respuesta, value: true %>
+
+        <div class="input-group">
+        <span class="input-group-addon">
+        <span class="glyphicon glyphicon-pencil"></span>
+        </span>
+        <%= f.text_field :descripcion_respuesta , class: 'form-control' , placeholder: 'Ingrese mensaje de respuesta para el cliente y presione la tecla enter' %>
+        </div>
+        <br>
+  <!--Ubicacion google maps-->
+        <div style='width: 100%'>
+        <div id="googlemaps" style='width: 100%; height: 300px;'>
+        </div>
+        </div>
+        
+        <script >
+        handler = Gmaps.build('Google');
+        handler.buildMap({ provider: {}, internal: {id: 'googlemaps'}}, function(){
+        markers = handler.addMarkers([
+        {
+        "lat": <%= @peticiones.latitud %>,
+        "lng": <%= @peticiones.longitud%>,
+        "picture": {
+        "url": "https://www.google.com.py/mapmaker/mapfiles/marker-k.png",
+        "width":  36,
+        "height": 36
+        },
+        "infowindow": "<%= @peticiones.descripcion_peticion.capitalize %>"
+        }
+        ]);
+        handler.bounds.extendWith(markers);
+        handler.fitMapToBounds();
+        handler.getMap().setZoom(17);
+        });
+        </script>
+           <!--Termina ubicacion google maps-->
+        <%end%>
+        
+        <%= form_for(@peticione) do |cancelar| %>
+        
+        <%=  cancelar.hidden_field :date_respuesta , value: Time.current.to_s %>
+        <%= cancelar.hidden_field :status_peticion, value: false %>
+        <%=  cancelar.hidden_field :descripcion_respuesta, value: 'El usuario cancelo la peticion' %>
+        <%= cancelar.hidden_field :status_respuesta, value: false %>
+        
+        <div style="text-align: right">
+        <%= cancelar.submit "Cancelar peticion" , class:'btn btn-danger' %>
+        </div>
+        <%end%>
+        
+        </div>
+         </div> 
+
+        <div class="panel panel-success">
+        <div class="panel-heading">Cliente: # <%= @peticiones.cliente_id %></div>
+        <div class="panel-body">
+        Nombre: <%= @peticiones.cliente.name.capitalize %> <%=  @peticiones.cliente.apellidos %>
+        <br>
+        Direccion: <%= @peticiones.cliente.direccion.capitalize %>
+        <br>
+        Telefono: <%= @peticiones.cliente.id_movil %>
+        <br>
+        Email: <%= @peticiones.cliente.email.capitalize %>
+        </div> 
+        </div>
+
+        <div class="panel panel-warning">
+        <div class="panel-heading">Descripcion de peticion # <%= @peticiones.id %></div>
+        <div class="panel-body">
+        Tipo: <%= @peticiones.peticiones.capitalize %>
+        <br>
+        Descripcion: <%= @peticiones.descripcion_peticion.capitalize %>
+        <br>
+        Creado el dia: <%= @peticiones.date_peticion %>
+        </div>
+        </div>
+      
+        
+      </div>
+<%end%>
+      </div>
+    </div>
+  </div>
+</div>

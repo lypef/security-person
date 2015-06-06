@@ -1,0 +1,5 @@
+<% if current_user.level != "admin" %>
+	<script>
+		window.location = '/';
+	</script>
+<% end %>

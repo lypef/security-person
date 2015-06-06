@@ -1,0 +1,72 @@
+<% if current_user.status == false || current_user.status == nil %>
+<div class = "alert alert-danger" role="alert"><strong><span class="glyphicon glyphicon-warning-sign"></span> Atencion!.</strong> Actualmente se encuentra en modo <strong>OFFLINE</strong>, por lo tanto no puede atender peticiones.</div>
+<% else %>
+
+  <% @peticiones.each do  |p| %>
+
+  <% if p.status_peticion == nil && p.status_respuesta == nil || p.user_id == current_user.id && p.status_respuesta == nil %>
+  
+  <script>
+  window.location='/peticiones/<%= p.id %>/edit';
+  </script> 
+  
+  <% end %>
+  <!--<script>setTimeout('document.location.reload()',10000); </script>-->
+  <meta http-equiv="refresh" content="10">
+	
+<% end %>
+<% end %>
+
+<center>
+	<table class="styletable">
+	<tr>
+		<% @solo4 = 1 %>
+		<% @peticiones.each do |peticiones| %>
+				<% if peticiones.user_id == current_user.id && @solo4 <= 3 %>
+				<% @solo4 += 1 %>
+				<td width="25%">
+				<div class="row">
+				<div class="col-sm-6 col-md-12">
+				<div class="thumbnail">
+				<% if peticiones.status_respuesta == true %>
+				<center><font size=50, color=#A9E2F3><span class="glyphicon glyphicon-ok"></span><h3><%= peticiones.peticiones.upcase %></h3>
+				</font></center>
+				<% else %>
+				<center><font size=50, color=#F5A9A9><span class="glyphicon glyphicon-remove"></span><h3><%= peticiones.peticiones.upcase %></h3>
+				</font></center>	
+				<%end%>	
+				<hr>
+				<p style="text-align: justify;">
+					<%= peticiones.descripcion_peticion.capitalize.slice(0,35) %>..
+				</p>
+				<hr>
+				Cliente: <%= peticiones.cliente.name.capitalize %> <%= peticiones.cliente.apellidos %>
+				<br>
+				Telefono: <%= peticiones.cliente.id_movil %>
+				<br>
+				Direccion: <%= peticiones.cliente.direccion.capitalize %>
+				<br>
+				Email: <%= peticiones.cliente.email.capitalize %>
+				<hr>
+				Hora de atencion: <%= peticiones.date_respuesta %>
+				<br>
+				Folio: <%= peticiones.id %>
+				<br>
+				Respuesta: <%= peticiones.descripcion_respuesta.capitalize.slice(0,35) %>..
+				<br>
+				Latitud: <%= peticiones.latitud %>
+				<br>
+				Longitud: <%= peticiones.longitud %>
+				</div>
+				</div>
+				</div>
+				</div>
+				</td>
+				<%end%>
+				<%if @solo4 == 4%>
+					<% break; %>
+				<%end%>
+		<%end%>
+	</tr>
+</table>
+</center>

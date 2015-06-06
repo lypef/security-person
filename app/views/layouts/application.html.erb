@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Security Person</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<% if user_signed_in? %>
+    <!-- Empieza Barra de navegacion -->
+<nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="navigation">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse"
+            data-target=".navbar-ex1-collapse">
+      <span class="sr-only">Desplegar navegación</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="/"><span class="glyphicon glyphicon-qrcode"></span></a>
+    
+  </div>
+ 
+  <!-- Agrupar los enlaces de navegación, los formularios y cualquier
+       otro elemento que se pueda ocultar al minimizar la barra -->
+  <div class="collapse navbar-collapse navbar-ex1-collapse">
+    <ul class="nav navbar-nav">
+      <li><%= link_to " Home", peticiones_path , class: 'glyphicon glyphicon-home' %></li>
+      <% if current_user.status == false || current_user.status == nil %>
+      <li><%= link_to " Comunicados  " , messages_path , class: 'glyphicon glyphicon-bullhorn' %></li>
+      <% if current_user.level == "admin" %>     
+      <li><%= link_to " Administrar  " , "/settings" , class: 'glyphicon glyphicon-signal' %></li> 
+      <%end%>
+      <% end %>  
+    </ul>
+ 
+    <ul class="nav navbar-nav navbar-right">
+      <!--Empieza menu status-->
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-stats"></span> Status <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <% if current_user.status == true %>
+            <li><%= link_to " Modo Offline" , "/renders/false" , class: 'glyphicon glyphicon-remove-sign' %></li>
+            <% else %>
+            <li><%= link_to " Modo Online" , "/renders/true" , class: 'glyphicon glyphicon-ok-sign' %></li>
+            <% end %>
+            <% if current_user.status == false || current_user.status == nil %>
+            <li class="divider"></li>
+            <li><%= link_to " Mis peticiones", peticiones_path , class: 'glyphicon glyphicon-th-large' %></li>
+            <% end %>
+            </ul>
+        </li>
+        <!--Termina menu status-->
+      <!--Empieza menu administrar-->
+      <% if current_user.status == false || current_user.status == nil  %>
+        <% if current_user.level == "admin" %>
+          <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-th"></span> Administrar <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><%= link_to ' Nuevo comunicado', new_message_path, class: 'glyphicon glyphicon-plus' %></li>
+            <li><%= link_to " Listar comunicados", messages_path , class: 'glyphicon glyphicon-list' %></li>
+            <p class="divider"></p>
+            <li><%= link_to ' Administrar peticiones', '/peticiones/view/listpeticions', class: 'glyphicon glyphicon-glass' %></li>
+            <p class="divider"></p>
+            <li><%= link_to " Nuevo cliente", new_cliente_path , class: 'glyphicon glyphicon-plus' %></li>
+            <li><%= link_to " Listar clientes", clientes_path , class: 'glyphicon glyphicon-list' %></li>
+            
+            </ul>
+        </li>
+        <% end %>
+        <!--Termina menu administrar-->
+        <!--Inicia Menu perfil-->
+          <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-user"> <%=current_user.name %></span><span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><%= link_to " Configuracion", edit_user_registration_path , class: 'glyphicon glyphicon-cog' %></li>  
+            </li><li class="divider"></li>
+            <li role="presentation"><%= link_to " Cerrar session", destroy_user_session_path, method: :delete , class: 'glyphicon glyphicon-remove-sign' %></li>
+          </ul>
+        </li>
+      <!--Termina menu Perfil-->  
+      <li><%= link_to "" , "/welcome/copyright" , class: 'glyphicon glyphicon-copyright-mark' %></li>  
+      <% end %> 
+  </div>
+</nav>  
+<% end %>
+      <!--Termina Barra de navegacion-->
+
+  <div class="container">
+  <div class="row">
+      <div class="span9 container-fluid">
+        <br><br><br><br>
+        <!--Alertas-->
+        <% if notice %>
+        <div class="alert alert-success" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <span class="glyphicon glyphicon-bullhorn " aria-hidden="true"><%= notice %></span>
+        </div>
+        <% end %>
+        <% if alert %>
+        <div class="alert alert-danger" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <span class="glyphicon glyphicon-bullhorn " aria-hidden="true"><%= alert %></span>
+        </div>
+        <% end %>
+        <!--Finaliza alertas-->
+        <% if user_signed_in? %>
+          <div class="panel panel-default">
+          <div class="panel-body">
+           <%= yield %>
+        <!--Footer-->
+        <div class="table-responsive">
+        <table width="90%" align="center" border="0" cellpadding="0" class="table">
+        <tr>
+        
+        <td width="30%">  
+        <div class="panel panel-success" >
+        <div class="panel-heading">Informacion de usuario</div>
+        <div class="panel-body" style="height:180px">
+        Nombre: <%= current_user.name %> <%= current_user.apellidos %>
+        <br>
+        Direccion: <%= current_user.direccion %>
+        <br>
+        Telefono: <%= current_user.telefono %>
+        <br>
+        Status: <% if current_user.status == true %> 
+                  Online 
+                <% else %> 
+                  Offline 
+                <%end%>
+        </div>
+        </div>  
+        </td>
+        
+        <td width="30%">  
+        <div class="panel panel-warning">
+        <div class="panel-heading">Estado del tiempo</div>
+        <div class="panel-body" style="height:180px">
+        <!--Estado del tiempo-->
+        <center>
+        <div id="cont_8e35e99f84ca29c590bc1fca6af769b5">
+        <span id="h_8e35e99f84ca29c590bc1fca6af769b5"><a id="a_8e35e99f84ca29c590bc1fca6af769b5" href="http://www.tiempo.com/las-choapas.htm" target="_blank" style="color:transparent;font-family:2;font-size:14px;">Mas Informaci&oacute;n</a></span>
+        <script type="text/javascript" src="http://www.tiempo.com/wid_loader/8e35e99f84ca29c590bc1fca6af769b5"></script>
+        </div>
+      </center>
+        <!--Termina estado del tiempo-->
+        </div>
+        </div>
+        </td>
+        
+        <td width="30%">
+        <div class="panel panel-info">
+        <div class="panel-heading">Desarrollador</div>
+        <div class="panel-body" style="height:180px">       
+        <p>Informate acerca de el por que se realizo este software y que tratamos de 
+        hacer con el.<br>Puedes leerlo <a href="#">aqui</a> directamente
+        escrito por el <a href="">desarrolador</a>.</p>
+        <br>  
+        </div>
+        
+        </div>  
+        </td>
+        </tr>
+        </table>
+        <div>
+        <!--Finaliza footer-->
+          </div>
+          <div>
+        <%else%>
+          <%= yield %>
+        <%end%>
+      </div>
+  <div>
+</div>
+
+</body>
+</html>
+  
+

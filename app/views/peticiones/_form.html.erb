@@ -1,0 +1,40 @@
+<%= form_for(@peticione) do |f| %>
+  <% if @peticione.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@peticione.errors.count, "error") %> prohibited this peticione from being saved:</h2>
+
+      <ul>
+      <% @peticione.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :tipo %><br>
+    <%= f.text_field :peticiones %>
+  </div>
+  <div class="field">
+    <%= f.label :descripcion_peticion %><br>
+    <%= f.text_field :descripcion_peticion %>
+  </div>
+  <div class="field">
+    <%= f.label :date_peticion %><br>
+    <%= f.text_field :date_peticion, value: Time.current.to_s %>
+  </div>
+  <div class="field">
+    <%= f.label :latitud %><br>
+    <%= f.text_field :latitud %>
+  </div>
+    <div class="field">
+    <%= f.label :logintud %><br>
+    <%= f.text_field :longitud %>
+  </div>
+  <div class="field">
+    <%= f.text_field :cliente_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

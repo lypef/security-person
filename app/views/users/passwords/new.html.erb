@@ -1,0 +1,20 @@
+<div class="panel panel-success">
+  <div class="panel-heading">¿Olvidaste tu contraseña?</div>
+  <div class="panel-body">
+   <!--Code-->
+   <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div class="input-group input-group-lg centered">
+    <%= f.label :email , class: 'label label-success' %><br>
+    <%= f.email_field :email, autofocus: true ,class:'form-control' %>
+  </div>
+  <br>
+  <div class="actions">
+    <%= f.submit "Recuperar" , class: 'btn btn-default' %>
+  </div>
+<% end %>
+<%= render "users/shared/links" %>
+<!--Finaliza code-->
+  </div>
+</div>  

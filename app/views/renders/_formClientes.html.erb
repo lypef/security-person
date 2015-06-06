@@ -1,0 +1,61 @@
+<%= render '/renders/checkstatus'%>
+<%= form_for(@cliente) do |f| %>
+  <% if @cliente.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@cliente.errors.count, "error") %> prohibited this cliente from being saved:</h2>
+
+      <ul>
+      <% @cliente.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="table-responsive">
+ 
+
+    <div class="input-group input-group-lg">
+    <span class="input-group-addon" id="sizing-addon1">Movil</span>
+    <%= f.text_field :id_movil ,class:'form-control', placeholder: 'Ingresa tu numero de celular' %>
+    </div>
+    <br>
+    <div class="input-group input-group-lg">
+    <%= f.password_field :password ,class:'form-control', placeholder: 'Escribe una contraseña' %>
+    <span class="input-group-addon" id="sizing-addon1">Contraseña</span>
+    
+    </div>
+    <br>
+    <div class="input-group input-group-lg">
+    <span class="input-group-addon" id="sizing-addon1">Confirm</span>
+    <%= f.password_field :password ,class:'form-control', placeholder: 'Confirma tu contraseña' %>
+    </div>    
+    <br>
+    <div class="input-group input-group-lg">
+    <%= f.text_field :name ,class:'form-control',placeholder: 'Cual es tu nombre.' %>
+    <span class="input-group-addon" id="sizing-addon1">Nombre</span>
+    </div>
+    <br>
+    <div class="input-group input-group-lg">
+    <span class="input-group-addon" id="sizing-addon1">Apellidos</span>
+    <%= f.text_field :apellidos ,class:'form-control', placeholder: 'Cual es tu apellido' %>
+    </div>
+    <br>
+    <div class="input-group input-group-lg">
+    <%= f.text_field :direccion ,class:'form-control', placeholder: 'Cual es tu direccion' %>
+    <span class="input-group-addon" id="sizing-addon1">Direccion</span>
+    </div>
+    <br>
+    <div class="input-group input-group-lg">
+    <span class="input-group-addon" id="sizing-addon1">Email</span>
+    <%= f.text_field :email ,class:'form-control', placeholder: 'Ingresa tu correo electronico' %>
+    </div>            
+    
+    <br>
+
+  <div class="input-group input-group-lg col-md-offset-5" >
+    <%= f.submit class:'btn btn-lg btn-success' %>
+  </div>
+  </div>
+</center>
+  <br>
+<% end %>
