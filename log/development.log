@@ -1,0 +1,266 @@
+
+
+Started GET "/" for 127.0.0.1 at 2015-06-05 20:36:00 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendered users/shared/_links.html.erb (5.2ms)
+  Rendered users/sessions/new.html.erb within layouts/application (54.9ms)
+Completed 200 OK in 808ms (Views: 764.1ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/assets/twitter/bootstrap/transition-e920d99b8661546d8bfb3a50bb3401ff.js?body=1" for 127.0.0.1 at 2015-06-05 20:36:01 -0500
+
+
+Started GET "/assets/twitter/bootstrap/alert-d9badd591415c8d9b56188d457413a2f.js?body=1" for 127.0.0.1 at 2015-06-05 20:36:01 -0500
+
+
+Started GET "/assets/twitter/bootstrap/modal-22e4b3cc7039c9f2e14126a988381a78.js?body=1" for 127.0.0.1 at 2015-06-05 20:36:01 -0500
+
+
+Started GET "/assets/jquery-ea2706bc2d0586731b7c00ec2cd0a414.js?body=1" for 127.0.0.1 at 2015-06-05 20:36:01 -0500
+
+
+Started GET "/assets/jquery_ujs-99f13489684e179b71ca7517fb74318d.js?body=1" for 127.0.0.1 at 2015-06-05 20:36:01 -0500
+
+
+Started GET "/assets/twitter/bootstrap/dropdown-e4346577672a4a7ee768730d6ad0b4cd.js?body=1" for 127.0.0.1 at 2015-06-05 20:36:01 -0500
+
+
+Started GET "/assets/twitter/bootstrap/tab-57128bfb849374981c34258d59437841.js?body=1" for 127.0.0.1 at 2015-06-05 20:36:01 -0500
+
+
+Started GET "/assets/twitter/bootstrap/scrollspy-fa91706a0639aaa5d768f8f3c74b25a9.js?body=1" for 127.0.0.1 at 2015-06-05 20:36:01 -0500
+
+
+Started GET "/assets/twitter/bootstrap/button-b0d2047e0a9531f022e7b3974a53f026.js?body=1" for 127.0.0.1 at 2015-06-05 20:36:01 -0500
+
+
+Started GET "/assets/twitter/bootstrap/collapse-84e55a4a7e94f05d923f3091c166ff2e.js?body=1" for 127.0.0.1 at 2015-06-05 20:36:01 -0500
+
+
+Started GET "/assets/twitter/bootstrap/tooltip-2c1ded952ba256a006c5fe5827c3345a.js?body=1" for 127.0.0.1 at 2015-06-05 20:36:01 -0500
+
+
+Started GET "/assets/twitter/bootstrap/popover-25da2e821aee1328fdd68c902ea2ca4e.js?body=1" for 127.0.0.1 at 2015-06-05 20:36:01 -0500
+
+
+Started GET "/assets/twitter/bootstrap/carousel-8a517fb8e112cfb5cbce10a44a8da4ac.js?body=1" for 127.0.0.1 at 2015-06-05 20:36:01 -0500
+
+
+Started GET "/assets/twitter/bootstrap/affix-b4ba482492fdd3f469614f39f066e0d0.js?body=1" for 127.0.0.1 at 2015-06-05 20:36:01 -0500
+
+
+Started GET "/assets/gmaps/objects/base_builder-0b872c08e0af97175baf0af73338a9ba.js?body=1" for 127.0.0.1 at 2015-06-05 20:36:01 -0500
+
+
+Started GET "/assets/gmaps/objects/builder-a681ad7de69e47ac46123f5e9dcafd20.js?body=1" for 127.0.0.1 at 2015-06-05 20:36:01 -0500
+
+
+Started GET "/assets/twitter/bootstrap-e800ced57066492f80dd348fac5ddae0.js?body=1" for 127.0.0.1 at 2015-06-05 20:36:01 -0500
+
+
+Started GET "/assets/underscore-469a313bd0d4a688f781293646117b43.js?body=1" for 127.0.0.1 at 2015-06-05 20:36:01 -0500
+
+
+Started GET "/assets/gmaps/google/objects/common-129ab325e1ffeadf5b47ce773cbc5d31.js?body=1" for 127.0.0.1 at 2015-06-05 20:36:01 -0500
+
+
+Started GET "/assets/gmaps/base-7debd928e000e374706a28bfa1a45665.js?body=1" for 127.0.0.1 at 2015-06-05 20:36:01 -0500
+
+
+Started GET "/assets/gmaps/base/base-8044fc2707b63e290da62ba627db9471.js?body=1" for 127.0.0.1 at 2015-06-05 20:36:01 -0500
+
+
+Started GET "/assets/gmaps/objects/handler-945beb21d23ba5f3aced34a1a96281f2.js?body=1" for 127.0.0.1 at 2015-06-05 20:36:01 -0500
+
+
+Started GET "/assets/gmaps/objects/null_clusterer-2fb7b049a06d0a49db16c5bba7a65523.js?body=1" for 127.0.0.1 at 2015-06-05 20:36:01 -0500
+
+
+Started GET "/assets/gmaps/google/builders/kml-3aae4598874c0141f37aaf04982dfa82.js?body=1" for 127.0.0.1 at 2015-06-05 20:36:01 -0500
+
+
+Started GET "/assets/gmaps/google/builders/map-8c65efd10cd8287fb88a9ea51d343405.js?body=1" for 127.0.0.1 at 2015-06-05 20:36:01 -0500
+
+
+Started GET "/assets/gmaps/google/builders/marker-508710cce287f44bf8aef45cde48f43f.js?body=1" for 127.0.0.1 at 2015-06-05 20:36:01 -0500
+
+
+Started GET "/assets/gmaps/google/builders/bound-749f492fde4b2c6c6d44204aebbb49b8.js?body=1" for 127.0.0.1 at 2015-06-05 20:36:01 -0500
+
+
+Started GET "/assets/gmaps/google/builders/circle-fc9ae837a97a2b6983abbb7638f012b4.js?body=1" for 127.0.0.1 at 2015-06-05 20:36:01 -0500
+
+
+Started GET "/assets/gmaps/google/builders/clusterer-e7bf673b9232897fda904b854e5b4c14.js?body=1" for 127.0.0.1 at 2015-06-05 20:36:01 -0500
+
+
+Started GET "/assets/gmaps/google/builders/polyline-054243a251d22b27858a449bbd1dcbd4.js?body=1" for 127.0.0.1 at 2015-06-05 20:36:01 -0500
+
+
+Started GET "/assets/gmaps/google/objects/bound-cfa6a34fac07f456097b6b98a04ec72a.js?body=1" for 127.0.0.1 at 2015-06-05 20:36:01 -0500
+
+
+Started GET "/assets/gmaps/google/objects/circle-7033d29a9702dcbb185cff409cdc9029.js?body=1" for 127.0.0.1 at 2015-06-05 20:36:01 -0500
+
+
+Started GET "/assets/gmaps/google/objects/clusterer-fd9d47a00b529d1b2e6678c176778c2a.js?body=1" for 127.0.0.1 at 2015-06-05 20:36:01 -0500
+
+
+Started GET "/assets/gmaps/google/builders/polygon-0367dc6493c55fd89517a526c103ffde.js?body=1" for 127.0.0.1 at 2015-06-05 20:36:01 -0500
+
+
+Started GET "/assets/gmaps/google/objects/kml-dbc1d76a54ea8496edceca3e7d07a425.js?body=1" for 127.0.0.1 at 2015-06-05 20:36:01 -0500
+
+
+Started GET "/assets/gmaps/google/objects/map-0bece87f362d0d664d6af9fdea678204.js?body=1" for 127.0.0.1 at 2015-06-05 20:36:01 -0500
+
+
+Started GET "/assets/gmaps/google/objects/marker-5dc4b0394302cb733e05a4b0649d84bf.js?body=1" for 127.0.0.1 at 2015-06-05 20:36:01 -0500
+
+
+Started GET "/assets/gmaps/google/objects/polygon-8544c8e47e1208a315aeaa1ab26d21e3.js?body=1" for 127.0.0.1 at 2015-06-05 20:36:01 -0500
+
+
+Started GET "/assets/gmaps/google/objects/polyline-8658944a459ee3e68140c25d98146ffc.js?body=1" for 127.0.0.1 at 2015-06-05 20:36:01 -0500
+
+
+Started GET "/assets/gmaps/google/primitives-3d7d615edcf8ba5e6dc0d2eadfaf3366.js?body=1" for 127.0.0.1 at 2015-06-05 20:36:01 -0500
+
+
+Started GET "/assets/gmaps/google-4ff037a1854ec026da1ad9665fba97d0.js?body=1" for 127.0.0.1 at 2015-06-05 20:36:01 -0500
+
+
+Started GET "/assets/maps.jpg" for 127.0.0.1 at 2015-06-05 20:36:02 -0500
+
+
+Started GET "/" for 127.0.0.1 at 2015-06-05 20:40:47 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendered users/shared/_links.html.erb (3.0ms)
+  Rendered users/sessions/new.html.erb within layouts/application (10.4ms)
+Completed 200 OK in 374ms (Views: 372.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery_ujs-99f13489684e179b71ca7517fb74318d.js?body=1" for 127.0.0.1 at 2015-06-05 20:40:48 -0500
+
+
+Started GET "/assets/twitter/bootstrap/alert-d9badd591415c8d9b56188d457413a2f.js?body=1" for 127.0.0.1 at 2015-06-05 20:40:48 -0500
+
+
+Started GET "/assets/twitter/bootstrap/transition-e920d99b8661546d8bfb3a50bb3401ff.js?body=1" for 127.0.0.1 at 2015-06-05 20:40:48 -0500
+
+
+Started GET "/assets/twitter/bootstrap/modal-22e4b3cc7039c9f2e14126a988381a78.js?body=1" for 127.0.0.1 at 2015-06-05 20:40:48 -0500
+
+
+Started GET "/assets/jquery-ea2706bc2d0586731b7c00ec2cd0a414.js?body=1" for 127.0.0.1 at 2015-06-05 20:40:48 -0500
+
+
+Started GET "/assets/twitter/bootstrap/scrollspy-fa91706a0639aaa5d768f8f3c74b25a9.js?body=1" for 127.0.0.1 at 2015-06-05 20:40:48 -0500
+
+
+Started GET "/assets/twitter/bootstrap/dropdown-e4346577672a4a7ee768730d6ad0b4cd.js?body=1" for 127.0.0.1 at 2015-06-05 20:40:48 -0500
+
+
+Started GET "/assets/twitter/bootstrap/tab-57128bfb849374981c34258d59437841.js?body=1" for 127.0.0.1 at 2015-06-05 20:40:48 -0500
+
+
+Started GET "/assets/twitter/bootstrap/tooltip-2c1ded952ba256a006c5fe5827c3345a.js?body=1" for 127.0.0.1 at 2015-06-05 20:40:48 -0500
+
+
+Started GET "/assets/twitter/bootstrap/popover-25da2e821aee1328fdd68c902ea2ca4e.js?body=1" for 127.0.0.1 at 2015-06-05 20:40:48 -0500
+
+
+Started GET "/assets/twitter/bootstrap/button-b0d2047e0a9531f022e7b3974a53f026.js?body=1" for 127.0.0.1 at 2015-06-05 20:40:48 -0500
+
+
+Started GET "/assets/twitter/bootstrap/collapse-84e55a4a7e94f05d923f3091c166ff2e.js?body=1" for 127.0.0.1 at 2015-06-05 20:40:48 -0500
+
+
+Started GET "/assets/twitter/bootstrap/affix-b4ba482492fdd3f469614f39f066e0d0.js?body=1" for 127.0.0.1 at 2015-06-05 20:40:48 -0500
+
+
+Started GET "/assets/twitter/bootstrap/carousel-8a517fb8e112cfb5cbce10a44a8da4ac.js?body=1" for 127.0.0.1 at 2015-06-05 20:40:48 -0500
+
+
+Started GET "/assets/twitter/bootstrap-e800ced57066492f80dd348fac5ddae0.js?body=1" for 127.0.0.1 at 2015-06-05 20:40:48 -0500
+
+
+Started GET "/assets/underscore-469a313bd0d4a688f781293646117b43.js?body=1" for 127.0.0.1 at 2015-06-05 20:40:48 -0500
+
+
+Started GET "/assets/gmaps/base-7debd928e000e374706a28bfa1a45665.js?body=1" for 127.0.0.1 at 2015-06-05 20:40:48 -0500
+
+
+Started GET "/assets/gmaps/base/base-8044fc2707b63e290da62ba627db9471.js?body=1" for 127.0.0.1 at 2015-06-05 20:40:48 -0500
+
+
+Started GET "/assets/gmaps/objects/base_builder-0b872c08e0af97175baf0af73338a9ba.js?body=1" for 127.0.0.1 at 2015-06-05 20:40:48 -0500
+
+
+Started GET "/assets/gmaps/objects/handler-945beb21d23ba5f3aced34a1a96281f2.js?body=1" for 127.0.0.1 at 2015-06-05 20:40:48 -0500
+
+
+Started GET "/assets/gmaps/objects/builder-a681ad7de69e47ac46123f5e9dcafd20.js?body=1" for 127.0.0.1 at 2015-06-05 20:40:48 -0500
+
+
+Started GET "/assets/gmaps/google/objects/common-129ab325e1ffeadf5b47ce773cbc5d31.js?body=1" for 127.0.0.1 at 2015-06-05 20:40:48 -0500
+
+
+Started GET "/assets/gmaps/objects/null_clusterer-2fb7b049a06d0a49db16c5bba7a65523.js?body=1" for 127.0.0.1 at 2015-06-05 20:40:48 -0500
+
+
+Started GET "/assets/gmaps/google/builders/bound-749f492fde4b2c6c6d44204aebbb49b8.js?body=1" for 127.0.0.1 at 2015-06-05 20:40:48 -0500
+
+
+Started GET "/assets/gmaps/google/builders/circle-fc9ae837a97a2b6983abbb7638f012b4.js?body=1" for 127.0.0.1 at 2015-06-05 20:40:48 -0500
+
+
+Started GET "/assets/gmaps/google/builders/clusterer-e7bf673b9232897fda904b854e5b4c14.js?body=1" for 127.0.0.1 at 2015-06-05 20:40:48 -0500
+
+
+Started GET "/assets/gmaps/google/builders/kml-3aae4598874c0141f37aaf04982dfa82.js?body=1" for 127.0.0.1 at 2015-06-05 20:40:48 -0500
+
+
+Started GET "/assets/gmaps/google/builders/map-8c65efd10cd8287fb88a9ea51d343405.js?body=1" for 127.0.0.1 at 2015-06-05 20:40:48 -0500
+
+
+Started GET "/assets/gmaps/google/builders/polyline-054243a251d22b27858a449bbd1dcbd4.js?body=1" for 127.0.0.1 at 2015-06-05 20:40:48 -0500
+
+
+Started GET "/assets/gmaps/google/builders/polygon-0367dc6493c55fd89517a526c103ffde.js?body=1" for 127.0.0.1 at 2015-06-05 20:40:48 -0500
+
+
+Started GET "/assets/gmaps/google/builders/marker-508710cce287f44bf8aef45cde48f43f.js?body=1" for 127.0.0.1 at 2015-06-05 20:40:48 -0500
+
+
+Started GET "/assets/gmaps/google/objects/bound-cfa6a34fac07f456097b6b98a04ec72a.js?body=1" for 127.0.0.1 at 2015-06-05 20:40:48 -0500
+
+
+Started GET "/assets/gmaps/google/objects/circle-7033d29a9702dcbb185cff409cdc9029.js?body=1" for 127.0.0.1 at 2015-06-05 20:40:48 -0500
+
+
+Started GET "/assets/gmaps/google/objects/clusterer-fd9d47a00b529d1b2e6678c176778c2a.js?body=1" for 127.0.0.1 at 2015-06-05 20:40:48 -0500
+
+
+Started GET "/assets/gmaps/google/objects/kml-dbc1d76a54ea8496edceca3e7d07a425.js?body=1" for 127.0.0.1 at 2015-06-05 20:40:48 -0500
+
+
+Started GET "/assets/gmaps/google/objects/map-0bece87f362d0d664d6af9fdea678204.js?body=1" for 127.0.0.1 at 2015-06-05 20:40:48 -0500
+
+
+Started GET "/assets/gmaps/google/objects/polygon-8544c8e47e1208a315aeaa1ab26d21e3.js?body=1" for 127.0.0.1 at 2015-06-05 20:40:48 -0500
+
+
+Started GET "/assets/gmaps/google/objects/marker-5dc4b0394302cb733e05a4b0649d84bf.js?body=1" for 127.0.0.1 at 2015-06-05 20:40:48 -0500
+
+
+Started GET "/assets/gmaps/google/objects/polyline-8658944a459ee3e68140c25d98146ffc.js?body=1" for 127.0.0.1 at 2015-06-05 20:40:48 -0500
+
+
+Started GET "/assets/gmaps/google/primitives-3d7d615edcf8ba5e6dc0d2eadfaf3366.js?body=1" for 127.0.0.1 at 2015-06-05 20:40:48 -0500
+
+
+Started GET "/assets/gmaps/google-4ff037a1854ec026da1ad9665fba97d0.js?body=1" for 127.0.0.1 at 2015-06-05 20:40:48 -0500
+
+
+Started GET "/assets/maps.jpg" for 127.0.0.1 at 2015-06-05 20:40:48 -0500
