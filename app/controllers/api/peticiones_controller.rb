@@ -1,9 +1,9 @@
 module Api
 	class PeticionesController < ApplicationController
 	
-		respond_to :json
+	respond_to :json
 
-	  def index
+	def index
         respond_with Peticione.all
       end
 

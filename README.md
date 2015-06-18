@@ -1,2 +1,2 @@
 # Sp
-Sistema desarollado por ISC: Francisco Eduardo Ascencio Dominguez
+Sistema desarollado por ISC: Francisco Eduardo Ascencio Dominguez.
