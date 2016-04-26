@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   resources :peticiones
   get 'peticiones/view/listpeticions' => 'peticiones#listpeticions'
-  
+
   resources :messages
   
   resources :clientes
